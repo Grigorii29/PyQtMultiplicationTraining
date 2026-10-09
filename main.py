@@ -30,7 +30,6 @@ class MyApp(QMainWindow, Ui_MainWindow):
     def keyPressEvent(self, event):
         if event.key() == 16777220:
             if self.cnt > 0:
-                print(self.cnt)
                 self.cnt -= 1
                 self.spinBox.setValue(self.cnt)
                 if self.a * self.b == int(self.lineEdit.text()):
@@ -42,6 +41,7 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 self.lineEdit.setText("")
                 self.workLabel.setText(f"{self.b} x {self.a}")
             if self.cnt == 0:
+                self.cnt -= 1
                 m = int((dt.datetime.now() - self.start_time).total_seconds()) // 60
                 sec = (dt.datetime.now() - self.start_time).seconds
                 self.resLabel.setText(f"Решено примеров: {self.cnt_ex}\nДопущено ошибок: {self.cnt_errors}\nВремя:\t{m}:{sec}")
