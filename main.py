@@ -44,7 +44,8 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 self.cnt -= 1
                 m = int((dt.datetime.now() - self.start_time).total_seconds()) // 60
                 sec = (dt.datetime.now() - self.start_time).seconds
-                self.resLabel.setText(f"Решено примеров: {self.cnt_ex}\nДопущено ошибок: {self.cnt_errors}\nВремя:\t{m}:{sec}")
+                self.resLabel.setText(
+                    f"Решено примеров: {self.cnt_ex}\nДопущено ошибок: {self.cnt_errors}\nВремя:\t{m}:{sec}")
 
 
 if __name__ == '__main__':
