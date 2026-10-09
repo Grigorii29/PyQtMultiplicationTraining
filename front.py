@@ -60,4 +60,4 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.startBtn.setText(_translate("MainWindow", "Старт"))
-        self.workLabel.setText(_translate("MainWindow", "16 x 7 = "))
+        self.workLabel.setText(_translate("MainWindow", ""))
