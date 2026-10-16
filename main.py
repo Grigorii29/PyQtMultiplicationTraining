@@ -36,6 +36,7 @@ class MyApp(QMainWindow, Ui_MainWindow):
                     self.resLabel.setText("✅ Верно")
                 else:
                     self.resLabel.setText(f"Ошибка {self.a} x {self.b} не равно {int(self.lineEdit.text())}")
+                    self.cnt_errors += 1
                 self.a = random.randint(2, 9)
                 self.b = random.randint(11, 99)
                 self.lineEdit.setText("")
@@ -45,7 +46,8 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 m = int((dt.datetime.now() - self.start_time).total_seconds()) // 60
                 sec = (dt.datetime.now() - self.start_time).seconds
                 self.resLabel.setText(
-                    f"Решено примеров: {self.cnt_ex}\nДопущено ошибок: {self.cnt_errors}\nВремя:\t{m}:{sec}")
+                    f"Решено примеров: {self.cnt_ex}\nДопущено ошибок: {self.cnt_errors}\nВремя:\t{m}:{sec % 60}")
+                self.cnt_errors = 0
 
 
 if __name__ == '__main__':
